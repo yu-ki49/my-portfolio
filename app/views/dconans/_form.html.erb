@@ -1,0 +1,37 @@
+<%= form_with(model: dconan) do |form| %>
+  <% if dconan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dconan.errors.count, "error") %> prohibited this dconan from being saved:</h2>
+
+      <ul>
+        <% dconan.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.text_field :day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :episode %>
+    <%= form.text_field :episode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manga %>
+    <%= form.text_field :manga %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

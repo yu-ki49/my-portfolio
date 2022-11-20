@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Anilist', toppage_index_path %>
+
+<h1>Detective Conan</h1>
+
+<%= form_for(@dconan) do |f| %>
+  <% if @dconan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dconan.errors.count, "error") %> prohibited this dconan from being saved:</h2>
+
+      <ul>
+      <% @dconan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :放送日 %><br>
+    <%= f.text_field :day %>
+  </div>
+  <div class="field">
+    <%= f.label :話数 %><br>
+    <%= f.text_field :episode %>
+  </div>
+  <div class="field">
+    <%= f.label :タイトル %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :漫画 %><br>
+    <%= f.text_field :manga %>
+  </div>
+  <div class="actions">
+    <%= f.submit"追加する"%>
+  </div>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>放送日</th>
+      <th>話数</th>
+      <th>タイトル</th>
+      <th>漫画</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @dconans.each do |dconan| %>
+      <tr>
+        <td><%= dconan.day %></td>
+        <td><%= dconan.episode %></td>
+        <td><%= dconan.title %></td>
+        <td><%= dconan.manga %></td>
+        <td><%= link_to '編集', dconans_path(id: dconan.id) %></td>
+        <td><%= link_to '消去', dconan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Detective Conan', dconans_path %>

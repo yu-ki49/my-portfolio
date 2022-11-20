@@ -1,0 +1,2 @@
+class Dconan < ApplicationRecord
+end

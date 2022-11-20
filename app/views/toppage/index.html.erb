@@ -1,0 +1,10 @@
+<%= link_to 'Anilist', toppage_index_path %>
+<h1>AniList</h1>
+説明<br>
+<%= link_to '作品一覧表', posts_path %>
+<br>
+<%= link_to 'トップページ', toppage_index_path %>
+<%= link_to '作品一覧', posts_path %>
+<%= link_to "ログイン", posts_path %>
+<%= link_to "新規登録", new_user_registration_path %>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>

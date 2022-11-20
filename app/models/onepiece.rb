@@ -1,0 +1,2 @@
+class Onepiece < ApplicationRecord
+end

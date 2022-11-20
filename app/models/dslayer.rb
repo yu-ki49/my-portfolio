@@ -1,0 +1,2 @@
+class Dslayer < ApplicationRecord
+end

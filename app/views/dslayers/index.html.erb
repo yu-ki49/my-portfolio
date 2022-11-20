@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Anilist', toppage_index_path %>
+
+<h1>鬼滅の刃</h1>
+
+<%= form_for(@dslayer) do |f| %>
+  <% if @dslayer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dslayer.errors.count, "error") %> prohibited this dslayer from being saved:</h2>
+
+      <ul>
+      <% @dslayer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :放送日 %><br>
+    <%= f.text_field :day %>
+  </div>
+  <div class="field">
+    <%= f.label :話数 %><br>
+    <%= f.text_field :episode %>
+  </div>
+  <div class="field">
+    <%= f.label :タイトル %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :漫画 %><br>
+    <%= f.text_field :manga %>
+  </div>
+  <div class="actions">
+    <%= f.submit"追加する"%>
+  </div>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>放送日</th>
+      <th>話数</th>
+      <th>タイトル</th>
+      <th>漫画</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dslayers.each do |dslayer| %>
+      <tr>
+        <td><%= dslayer.day %></td>
+        <td><%= dslayer.episode %></td>
+        <td><%= dslayer.title %></td>
+        <td><%= dslayer.manga %></td>
+        <td><%= link_to '編集', dslayers_path(id: dslayer.id) %></td>
+        <td><%= link_to '消去', dslayer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Demon Slayer', dslayers_path %>
