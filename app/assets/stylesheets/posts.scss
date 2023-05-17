@@ -1,3 +1,79 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.subtitle{
+    line-height: 0.9;
+    margin-top: 30px;
+    margin-left: 2%;
+    font-size: 150%;
+    transform: scale(0.8,1);
+    transform-origin: top left;
+}
+
+
+.list{
+    font-size: 250%;
+    margin-top: 1%;
+    margin-left: 2%;
+    transform: scale(0.8,1);
+    transform-origin: top left;
+}
+
+.gazo img{
+    width: 500px;
+    margin-left: 5px;
+    margin-right:5px;
+    filter: grayscale(100%);/*モノクロ具合を変更したい場合はこの数値を変更*/
+    transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+}
+
+.gazo:hover img{/*hoverした時の変化*/
+    filter:grayscale(0);
+}
+
+.gazo2 img{
+    width: 500px;
+    margin-left: 5px;
+    margin-right:5px;
+    filter: grayscale(100%);/*モノクロ具合を変更したい場合はこの数値を変更*/
+    transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+}
+
+.gazo2:hover img{/*hoverした時の変化*/
+    filter:grayscale(0);
+}
+
+.gazo3 img{
+    width: 500px;
+    margin-left: 5px;
+    margin-right:5px;
+    filter: grayscale(100%);/*モノクロ具合を変更したい場合はこの数値を変更*/
+    transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+}
+
+.gazo3:hover img{/*hoverした時の変化*/
+    filter:grayscale(0);
+}
+
+.gazo4 img{
+    width: 500px;
+    margin-left: 5px;
+    margin-right:5px;
+    filter: grayscale(100%);/*モノクロ具合を変更したい場合はこの数値を変更*/
+    transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+}
+
+.gazo4:hover img{/*hoverした時の変化*/
+    filter:grayscale(0);
+}
+
+section{
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+

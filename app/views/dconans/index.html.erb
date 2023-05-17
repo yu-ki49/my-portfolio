@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Anilist', toppage_index_path %>
+<div class="subtitle">
+  <p>ANIME</p>
+  <p>MANGA</p>
+  <p>LIST</p>
+</div>
 
-<h1>Detective Conan</h1>
+<div class="anime">
+  <p>DETECTIVE CONAN（名探偵コナン）</p>
+</div>
 
 <%= form_for(@dconan) do |f| %>
   <% if @dconan.errors.any? %>
@@ -18,33 +24,33 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :放送日 %><br>
+    <%= f.label :DAY %>
     <%= f.text_field :day %>
   </div>
   <div class="field">
-    <%= f.label :話数 %><br>
+    <%= f.label :EPISODE %>
     <%= f.text_field :episode %>
   </div>
   <div class="field">
-    <%= f.label :タイトル %><br>
+    <%= f.label :TITLE %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :漫画 %><br>
+    <%= f.label :MANGA %>
     <%= f.text_field :manga %>
   </div>
-  <div class="actions">
-    <%= f.submit"追加する"%>
+  <div class="btn1">
+    <%= f.submit"ADD"%>
   </div>
 <% end %>
 
 <table>
   <thead>
     <tr>
-      <th>放送日</th>
-      <th>話数</th>
-      <th>タイトル</th>
-      <th>漫画</th>
+      <th>DAY</th>
+      <th>EPISODE</th>
+      <th>TITLE</th>
+      <th>MANGA</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -57,13 +63,13 @@
         <td><%= dconan.episode %></td>
         <td><%= dconan.title %></td>
         <td><%= dconan.manga %></td>
-        <td><%= link_to '編集', dconans_path(id: dconan.id) %></td>
-        <td><%= link_to '消去', dconan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'EDIT', dconans_path(id: dconan.id) %></td>
+        <td><%= link_to 'DELETE', dconan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <a href="#" class="gotop">TOP</a>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Detective Conan', dconans_path %>
+

@@ -1,3 +1,29 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.ch label{
+    display: inline-block;
+    text-align: left;
+    margin-top: 7px;
+    height: 10px;
+    width: 100px;
+    text-align: right;
+    width: 20%;
+}
+
+.ch input{
+    margin-left: 20%;
+}
+
+.actions input{
+    font-family: "Cardinal",serif;
+    display: block;
+    margin-top: 5px;
+    margin-left: 20%;
+    width: 60px;
+}
+
+.new_user a{
+    margin-left: 20%;
+}

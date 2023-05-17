@@ -1,3 +1,62 @@
 // Place all the styles related to the toppage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body{
+    font-family: "Cardinal",serif;
+    font-weight:lighter;
+    background-image: url("004.jpg");
+    background-size: cover;
+    background-attachment: fixed
+}
+
+.title{
+    line-height: 0.9;
+    margin-top: 60px;
+    margin-left: 10%;
+    font-size: 320%;
+    transform: scale(0.8,1);
+    transform-origin: top left;
+    animation: fadeIn 4.0s ease 0.4s 1 normal;
+}
+
+.about {
+    text-align: center;
+    transform: scale(0.8,1);
+    border-bottom: solid 1px  black;
+}
+
+.explain{
+    margin-top: 8%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 110%;
+    text-align: center;
+    animation: fadeIn 4.0s ease 0.4s 1 normal;
+}
+
+@keyframes fadeIn { /*animation-nameで設定した値を書く*/
+
+    0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+    100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+}
+
+.link {
+    margin-top: 5%;
+    margin-left: 70%;
+    margin-right: 10%;
+    margin-bottom: 0px;
+}
+
+.link a{
+    font-size: 110%;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    animation: fadeIn 4.0s ease 0.4s 1 normal;
+}
+
+.link a:hover{
+    color: gray;/*ホバー時の文字色*/
+}
+

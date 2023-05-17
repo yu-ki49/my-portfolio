@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ani</title>
+    <title>Anilist</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,37 @@
   </head>
 
   <body>
+    <header>
+      <input id="menu-cb" type="checkbox" value="off">
+      <label id="menu-icon" for="menu-cb"></label>
+      <div id="ham-menu">
+        <div class="sub">
+            <p>ANIME</p>
+            <p>MANGA</p>
+            <p>LIST</p>
+        </div>
+        <ul class="header-items-sp">
+          <li class="header-item-sp">
+            <%= link_to 'TOPPAGE', toppage_index_path %>
+          </li>
+          <li class="header-item-sp">
+            <%= link_to 'ANIME LIST', posts_path %>
+          </li>
+          <li class="header-item-sp">
+            <%= link_to "LOGIN", new_user_session_path %>
+          </li>
+          <li class="header-item-sp">
+            <%= link_to "SIGNIN", new_user_registration_path %>
+          </li>
+          <li class="header-item-sp">
+          <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </header>
+      <div class="header-list">
+
     <%= yield %>
   </body>
 </html>

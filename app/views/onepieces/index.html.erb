@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Anilist', toppage_index_path %>
+<div class="subtitle">
+  <p>ANIME</p>
+  <p>MANGA</p>
+  <p>LIST</p>
+</div>
 
-<h1>Onepiece</h1>
+<div class="anime">
+  <p>ONEPIECE（ワンピース）</p>
+</div>
 
 <%= form_for(@onepiece) do |f| %>
   <% if @onepiece.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@onepiece.errors.count, "error") %> prohibited this onepiece from being saved:</h2>
-
       <ul>
       <% @onepiece.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -17,35 +22,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :放送日 %><br>
-    <%= f.text_field :day %>
-  </div>
-  <div class="field">
-    <%= f.label :話数 %><br>
-    <%= f.text_field :episode %>
-  </div>
-  <div class="field">
-    <%= f.label :タイトル %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :漫画 %><br>
-    <%= f.text_field :manga %>
-  </div>
-  <div class="actions">
-    <%= f.submit"追加する"%>
-  </div>
+    <div class="field">
+      <%= f.label :DAY %>
+      <%= f.text_field :day %>
+    </div>
+    <div class="field">
+      <%= f.label :EPISODE %>
+      <%= f.text_field :episode %>
+    </div>
+    <div class="field">
+      <%= f.label :TITLE %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :MANGA %>
+      <%= f.text_field :manga %>
+    </div>
+    <div class="btn1">
+      <%= f.submit "ADD" %>
+    </div>
 <% end %>
 
 <table>
   <thead>
     <tr>
-      <th>放送日</th>
-      <th>話数</th>
-      <th>タイトル</th>
-      <th>漫画</th>
-      <th colspan="3"></th>
+      <th>DAY</th>
+      <th>EPISODE</th>
+      <th>TITLE</th>
+      <th>MANGA</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -56,12 +61,12 @@
         <td><%= onepiece.episode %></td>
         <td><%= onepiece.title %></td>
         <td><%= onepiece.manga %></td>
-        <td><%= link_to '編集', onepieces_path(id: onepiece.id) %></td>
-        <td><%= link_to '消去', onepiece, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'EDIT', onepieces_path(id: onepiece.id) %></td>
+        <td><%= link_to 'DELETE', onepiece, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <a href="#" class="gotop">TOP</a>
   </tbody>
 </table>
 
 <br>
-<%= link_to 'New Onepiece', onepieces_path %>
